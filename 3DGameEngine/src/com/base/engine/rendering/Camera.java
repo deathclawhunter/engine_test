@@ -1,7 +1,7 @@
 package com.base.engine.rendering;
 
 import com.base.engine.core.Input;
-import com.base.engine.core.Time;
+import com.base.engine.core.Matrix4f;
 import com.base.engine.core.Vector2f;
 import com.base.engine.core.Vector3f;
 
@@ -11,26 +11,30 @@ public class Camera {
 	private Vector3f pos;
 	private Vector3f forward;
 	private Vector3f up;
+	private Matrix4f projection;
 	
 	private boolean mouseLocked = false;
 	private float sensitivity = 0.1f;
 	private Vector2f centerPosition = new Vector2f(Window.getWidth() / 2, Window.getHeight() / 2);
 	
-	public Camera(Vector3f pos, Vector3f forward, Vector3f up) {
-		this.pos = pos;
-		this.forward = forward;
-		this.up = up;
-		up.normalized();
-		forward.normalized();
+	public Camera(float fov, float aspect, float zNear, float zFar) {
+		this.pos = new Vector3f(0, 0, 0);
+		this.forward = new Vector3f(0, 0, 1).normalized();
+		this.up = new Vector3f(0, 1, 0).normalized();
+		this.projection = new Matrix4f().initPerspective(fov, aspect, zNear, zFar);
 	}
 	
-	public Camera() {
-		this(new Vector3f(0, 0, 0), new Vector3f(0, 0, 1), new Vector3f(0, 1, 0));
+	public Matrix4f getViewProjection() {
+		Matrix4f cameraRotation = new Matrix4f().initRotation(forward, up);
+		Matrix4f cameraTranslation = new Matrix4f().initTranslation(-pos.getX(),
+				-pos.getY(), -pos.getZ());
+		
+		return projection.mul(cameraRotation.mul(cameraTranslation));
 	}
 	
-	public void input() {
-		float movAmt = (float) (10 * Time.getDelta());
-		float rotAmt = (float) (100 * Time.getDelta());
+	public void input(float delta) {
+		float movAmt = (float) (10 * delta);
+		float rotAmt = (float) (100 * delta);
 		
 		if(Input.getKey(Input.KEY_ESCAPE)) {
 			Input.setCursor(true);

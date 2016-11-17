@@ -8,10 +8,12 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 import com.base.engine.core.Matrix4f;
+import com.base.engine.core.Transform;
 import com.base.engine.core.Util;
 import com.base.engine.core.Vector3f;
 
 public class Shader {
+	private RenderingEngine renderingEngine;
 	private int program;
 	private HashMap<String, Integer> uniforms;
 	
@@ -49,6 +51,10 @@ public class Shader {
 		addProgram(loadShader(fileName), GL_FRAGMENT_SHADER);
 	}
 	
+	public void setAttribLocation(String attributeName, int location) {
+		glBindAttribLocation(program, location, attributeName);
+	}
+	
 	@SuppressWarnings("deprecation")
 	public void compileShader() {
 		glLinkProgram(program);
@@ -70,7 +76,15 @@ public class Shader {
 		glUseProgram(program);
 	}
 	
-	public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Material material) {
+	public void setRenderingEngine(RenderingEngine renderingEngine) {
+		this.renderingEngine = renderingEngine;
+	}
+	
+	public RenderingEngine getRenderingEngine() {
+		return this.renderingEngine;
+	}
+	
+	public void updateUniforms(Transform transform, Material material) {
 		
 	}
 	

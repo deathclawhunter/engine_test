@@ -92,4 +92,20 @@ public class Vector2f {
 	public String toString() {
 		return "(" + x + " " + y + ")";
 	}
+	
+	public Vector2f lerp(Vector2f dest, float lerpFactor) {
+		return dest.sub(this).mul(lerpFactor).add(this);
+	}
+	
+	public boolean equals(Vector2f r) {
+		return x == r.getX() && y == r.getY();
+	}
+	
+	public float cross(Vector2f r) {
+		return x * r.getY() - y * r.getX();
+	}
+	
+	public float max() {
+		return Math.max(x,  y);
+	}
 }

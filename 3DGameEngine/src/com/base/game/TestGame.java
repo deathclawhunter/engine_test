@@ -1,25 +1,24 @@
 package com.base.game;
 
+import com.base.engine.components.DirectionalLight;
+import com.base.engine.components.MeshRenderer;
+import com.base.engine.components.PointLight;
+import com.base.engine.components.SpotLight;
 import com.base.engine.core.Game;
 import com.base.engine.core.GameObject;
-import com.base.engine.core.Transform;
 import com.base.engine.core.Vector2f;
 import com.base.engine.core.Vector3f;
-import com.base.engine.rendering.Camera;
 import com.base.engine.rendering.Material;
 import com.base.engine.rendering.Mesh;
 import com.base.engine.rendering.Texture;
 import com.base.engine.rendering.Vertex;
-import com.base.engine.rendering.Window;
 
 public class TestGame extends Game {
 		
-	private Camera camera;
 	private GameObject planeObject;
 	
 	@Override
 	public void init() {
-		camera = new Camera();
 		
 		float fieldDepth = 10.0f;
 		float fieldWidth = 10.0f;
@@ -40,11 +39,27 @@ public class TestGame extends Game {
 		
 		planeObject = new GameObject();
 		planeObject.addComponent(meshRenderer);
-		planeObject.getTransform().setTranslation(0, -1, 5);
+		planeObject.getTransform().getPos().set(0, -1, 5);
+		
+		GameObject directionalLightObject = new GameObject();
+		DirectionalLight directionalLight = new DirectionalLight(new Vector3f(0f, 0f, 1f), 0.4f,
+				new Vector3f(1, 1, 1));
+		directionalLightObject.addComponent(directionalLight);
+		
+		GameObject pointLightObject = new GameObject();
+		pointLightObject.addComponent(new PointLight(new Vector3f(0f, 1f, 0f), 0.4f,
+				new Vector3f(0, 0, 1)));
+		
+		SpotLight spotLight = new SpotLight(new Vector3f(0f, 1f, 1f), 0.8f,
+				new Vector3f(0, 0, .05f), new Vector3f(1, 0, 0), 0.7f);
+		GameObject spotLightObject = new GameObject();
+		spotLightObject.addComponent(spotLight);
+		
+		spotLight.getTransform().setPos(new Vector3f(5, 0, 5));
+		
 		getRootObject().addChild(planeObject);
-		 
-		Transform.setProjection(70f, Window.getWidth(), Window.getHeight(),
-				0.1f, 1000);
-		Transform.setCamera(camera);
+		getRootObject().addChild(directionalLightObject);
+		getRootObject().addChild(pointLightObject);
+		getRootObject().addChild(spotLightObject);
 	}
 }
