@@ -108,4 +108,15 @@ public class Vector2f {
 	public float max() {
 		return Math.max(x,  y);
 	}
+	
+	public Vector2f set(float x, float y) {
+		this.x = x;
+		this.y = y;
+		
+		return this;
+	}
+	
+	public Vector2f set(Vector2f r) {
+		return this.set(r.x, r.y);
+	}
 }

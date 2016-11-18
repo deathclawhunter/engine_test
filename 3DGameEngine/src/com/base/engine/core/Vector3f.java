@@ -149,9 +149,15 @@ public class Vector3f {
 		return Math.max(x, Math.max(y, z));
 	}
 	
-	public void set(float x, float y, float z) {
+	public Vector3f set(float x, float y, float z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		
+		return this;
+	}
+	
+	public Vector3f set(Vector3f r) {
+		return this.set(r.getX(), r.getY(), r.getZ());
 	}
 }
