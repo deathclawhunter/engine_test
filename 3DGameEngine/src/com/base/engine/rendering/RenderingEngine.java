@@ -32,19 +32,15 @@ public class RenderingEngine {
 		glEnable(GL_TEXTURE_2D);
 		// glEnable(GL_FRAMEBUFFER_SRGB);
 		
-		mainCamera = new Camera((float) Math.toRadians(70.0f),
+		/* mainCamera = new Camera((float) Math.toRadians(70.0f),
 				(float) Window.getWidth() / (float) Window.getHeight(),
-				0.01f, 1000.0f);
+				0.01f, 1000.0f); */
 		
 		ambientLight = new Vector3f(0.1f, 0.1f, 0.1f);
 	}
 	
 	public Vector3f getAmbientLight() {
 		return ambientLight;
-	}
-	
-	public void input(float delta) {
-		mainCamera.input(delta);
 	}
 
 	public void render(GameObject object) {
@@ -113,5 +109,9 @@ public class RenderingEngine {
 
 	public void setMainCamera(Camera mainCamera) {
 		this.mainCamera = mainCamera;
+	}
+
+	public void addCamera(Camera camera) {
+		mainCamera = camera;
 	}
 }

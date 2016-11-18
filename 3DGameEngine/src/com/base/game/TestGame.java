@@ -1,17 +1,20 @@
 package com.base.game;
 
+import com.base.engine.components.Camera;
 import com.base.engine.components.DirectionalLight;
 import com.base.engine.components.MeshRenderer;
 import com.base.engine.components.PointLight;
 import com.base.engine.components.SpotLight;
 import com.base.engine.core.Game;
 import com.base.engine.core.GameObject;
+import com.base.engine.core.Quaternion;
 import com.base.engine.core.Vector2f;
 import com.base.engine.core.Vector3f;
 import com.base.engine.rendering.Material;
 import com.base.engine.rendering.Mesh;
 import com.base.engine.rendering.Texture;
 import com.base.engine.rendering.Vertex;
+import com.base.engine.rendering.Window;
 
 public class TestGame extends Game {
 		
@@ -51,15 +54,21 @@ public class TestGame extends Game {
 				new Vector3f(0, 0, 1)));
 		
 		SpotLight spotLight = new SpotLight(new Vector3f(0f, 1f, 1f), 0.8f,
-				new Vector3f(0, 0, .05f), new Vector3f(1, 0, 0), 0.7f);
+				new Vector3f(0, 0, .05f), 0.7f);
 		GameObject spotLightObject = new GameObject();
 		spotLightObject.addComponent(spotLight);
 		
 		spotLight.getTransform().setPos(new Vector3f(5, 0, 5));
+		spotLight.getTransform().setRot(new Quaternion().initRotation(new Vector3f(0, 1, 0),
+				(float) Math.toRadians(-90.0f)));
 		
 		getRootObject().addChild(planeObject);
 		getRootObject().addChild(directionalLightObject);
 		getRootObject().addChild(pointLightObject);
 		getRootObject().addChild(spotLightObject);
+		
+		getRootObject().addChild(new GameObject().addComponent(new Camera((float) Math.toRadians(70.0f),
+				(float) Window.getWidth() / (float) Window.getHeight(),
+				0.01f, 1000.0f)));
 	}
 }

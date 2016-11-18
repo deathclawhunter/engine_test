@@ -25,9 +25,10 @@ public class GameObject {
 		children.add(child);
 	}
 	
-	public void addComponent(GameComponent component) {
+	public GameObject addComponent(GameComponent component) {
 		components.add(component);
 		component.setParent(this);
+		return this;
 	}
 	
 	public void input(float delta) {

@@ -70,7 +70,6 @@ public class CoreEngine {
 				}
 				
 				game.input((float) frameTime);
-				renderingEngine.input((float) frameTime);
 				Input.update();
 				game.update((float) frameTime);
 				
