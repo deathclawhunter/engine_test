@@ -47,12 +47,12 @@ public class TestGame extends Game {
 		Mesh mesh = new Mesh(vertices, indices, true);
 		Mesh mesh2 = new Mesh(vertices2, indices2, true);
 		Material material = new Material(); // , new Vector3f(1, 1, 1), 1, 8
-		material.addTexture("diffuse", new Texture("test.png"));
+		material.addTexture("diffuse", new Texture("bricks.jpg"));
 		material.addFloat("specularIntensity", 1f);
 		material.addFloat("specularPower", 8f);
 		
 		Material material2 = new Material(); // , new Vector3f(1, 1, 1), 1, 8
-		material2.addTexture("diffuse", new Texture("bricks.jpg"));
+		material2.addTexture("diffuse", new Texture("test.png"));
 		material2.addFloat("specularIntensity", 1f);
 		material2.addFloat("specularPower", 8f);
 		
