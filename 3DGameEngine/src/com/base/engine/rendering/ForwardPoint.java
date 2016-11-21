@@ -44,21 +44,21 @@ public class ForwardPoint extends Shader {
 		return instance;
 	}
 	
-	public void updateUniforms(Transform transform, Material material) {
+	public void updateUniforms(Transform transform, Material material, RenderingEngine renderingEngine) {
 		
 		Matrix4f worldMatrix = transform.getTransformation();
-		Matrix4f projectedMatrix = getRenderingEngine().getMainCamera().getViewProjection().mul(worldMatrix);
+		Matrix4f projectedMatrix = renderingEngine.getMainCamera().getViewProjection().mul(worldMatrix);
 		
-		material.getTexture().bind();
+		material.getTexture("diffuse").bind();
 		setUniform("model", worldMatrix);
 		setUniform("MVP", projectedMatrix);
 		
-		setUniformf("specularIntensity", material.getSpecularIntensity());
-		setUniformf("specularPower", material.getSpecularPower());
+		setUniformf("specularIntensity", material.getFloat("specularIntensity"));
+		setUniformf("specularPower", material.getFloat("specularPower"));
 		
-		setUniform("eyePos", getRenderingEngine().getMainCamera().getTransform().getPos());
+		setUniform("eyePos", renderingEngine.getMainCamera().getTransform().getTransformedPos());
 		
-		setUniformPointLight("pointLight", (PointLight) getRenderingEngine().getActiveLight());
+		setUniformPointLight("pointLight", (PointLight) renderingEngine.getActiveLight());
 	}
 	
 	public void setUniformBaseLight(String uniformName, BaseLight baseLight) {
@@ -71,7 +71,7 @@ public class ForwardPoint extends Shader {
 		setUniformf(uniformName + ".atten.constant", pointLight.getConstant());
 		setUniformf(uniformName + ".atten.linear", pointLight.getLinear());
 		setUniformf(uniformName + ".atten.exponent", pointLight.getExponent());
-		setUniform(uniformName + ".position", pointLight.getTransform().getPos());
+		setUniform(uniformName + ".position", pointLight.getTransform().getTransformedPos());
 		setUniformf(uniformName + ".range", pointLight.getRange());
 	}
 }

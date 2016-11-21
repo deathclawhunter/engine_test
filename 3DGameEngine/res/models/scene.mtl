@@ -1,0 +1,395 @@
+# Blender MTL File: 'scene.blend'
+# Material Count: 34
+
+newmtl Cam.001
+Ns 96.078431
+Ka 0.281690 0.281690 0.281690
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+
+newmtl ChairCloth
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\nzsnnw51qozk-Wooden_Chair\Wooden_Chair\Chair_Cloth_d.tga
+map_Bump C:\\Users\\DK\\Downloads\\nzsnnw51qozk-Wooden_Chair\\Wooden_Chair\\Chair_Cloth_n.tga
+
+newmtl ChairWood
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\nzsnnw51qozk-Wooden_Chair\Wooden_Chair\Chair_Wood_d.tga
+map_Bump C:\\Users\\DK\\Downloads\\nzsnnw51qozk-Wooden_Chair\\Wooden_Chair\\Chair_Wood_n.tga
+
+newmtl ChairWood_NONE
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\DK\\Downloads\\nzsnnw51qozk-Wooden_Chair\\Wooden_Chair\\Chair_Wood_n.tga
+map_Kd C:\\Users\\DK\\Downloads\\nzsnnw51qozk-Wooden_Chair\\Wooden_Chair\\Chair_Wood_d.tga
+
+newmtl DogFoodCan
+Ns 94.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\tmse1zwkwlq8-Dog_Food_Can\Dog_Food_Can\Dog_Food_Can_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\tmse1zwkwlq8-Dog_Food_Can\\Dog_Food_Can\\Dog_Food_Can_N.tga
+
+newmtl EnclaveAPABody
+Ns 94.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\kp3y1fxdjx8g-Enclave_APA\Enclave_APA\Enclave_APA01_D.tga
+
+newmtl Mat
+Ns 54.901961
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.200000 0.200000 0.200000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\vmxakte0wj-1911\1911\Mat_DiffuseColor_Composite.tga
+map_Ka C:\\Users\\DK\\Downloads\\vmxakte0wj-1911\\1911\\Mat_DiffuseColor_Composite.tga
+
+newmtl Material
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.602353 0.602353 0.602353
+Ks 0.376471 0.376471 0.376471
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl Material.002
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\odqptvlla8sg-balcao\balcao.png
+
+newmtl Material__65
+Ns 9.803922
+Ka 0.588000 0.588000 0.588000
+Kd 0.588000 0.588000 0.588000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\vmxakte0wj-1911\1911\Textures\Tex_0008_1.png
+map_Ka C:\\Users\\DK\\Downloads\\vmxakte0wj-1911\\1911\\Textures\\Tex_0008_1.png
+
+newmtl Model001_Material001
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\hadnhhq3sc1s-XNANukaColaFridgeRustFallout3\XNA_Nuka_Cola_Fridge_Rust_Fallout3\nuka_fridge_rust_d.png
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\hadnhhq3sc1s-XNANukaColaFridgeRustFallout3\\XNA_Nuka_Cola_Fridge_Rust_Fallout3\\nuka_fridge_rust_n.png
+
+newmtl NoraEye
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Nora_Eye_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Nora_Eye_N.tga
+
+newmtl NoraEyeRef
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Nora_Eyeref_D.tga
+
+newmtl NoraHands
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Nora_Hands_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Nora_Hands_N.tga
+
+newmtl NoraHead
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Nora_Head_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Nora_Head_N.tga
+
+newmtl NoraHeadRear
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Nora_Body_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Nora_Body_N.tga
+
+newmtl NoraMouth
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Nora_Mouth_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Nora_Mouth_N.tga
+
+newmtl PillarMoulding.001
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl VaultNumberF
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Vault_Suit_Number111_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Vault_Suit_Number111_N.tga
+
+newmtl VaultSuitFA
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Vault_Suit_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Vault_Suit_N.tga
+
+newmtl VaultSuitFB
+Ns 94.117647
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\f3jv72w84y68-Nora_Vault_111_Suit\Nora_Vault_111_Suit\Vault_Suit_D.tga
+map_Bump C:\\Users\\DK\\Downloads\\f3jv72w84y68-Nora_Vault_111_Suit\\Nora_Vault_111_Suit\\Vault_Suit_N.tga
+
+newmtl VendingMachine1
+Ns 94.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\dvfi2ahfpwqo-Vending_Machine_1\Vending_Machine_1\Vending_Machine_D.tga
+
+newmtl WoodenBox1.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\Wooden Box\Texture\WoodenBoxD1.tga
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN1.tga
+
+newmtl WoodenBox2
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN2.tga
+map_Kd D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxD2.tga
+
+newmtl WoodenBox2.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN2.tga
+map_Kd D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxD2.tga
+
+newmtl WoodenBox2.001_WoodenBoxD2.tga.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\Wooden Box\Texture\WoodenBoxD2.tga
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN2.tga
+
+newmtl WoodenBox3.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\Wooden Box\Texture\WoodenBoxD3.tga
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN3.tga
+
+newmtl WoodenBox4.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\Wooden Box\Texture\WoodenBoxD4.tga
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN4.tga
+
+newmtl WoodenBox5.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\Wooden Box\Texture\WoodenBoxD5.tga
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN5.tga
+
+newmtl WoodenBox6.001
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd D:\davis\proj\3d_game_engine\models\final_scene\Wooden Box\Texture\WoodenBoxD6.tga
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN6.tga
+
+newmtl WoodenWall
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.480000 0.480000 0.480000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxN2.tga
+map_Kd D:\\davis\\proj\\3d_game_engine\\models\\final_scene\\Wooden Box\\Texture\\WoodenBoxD2.tga
+
+newmtl _PosterBedAltShader.001
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl __poster_bed_d_shader.001
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl fan
+Ns 94.117647
+Ka 0.000000 0.000000 0.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 2
+map_Kd C:\Users\DK\Downloads\ee99bxwe5a80-Fan\Fan\Fan_D.tga

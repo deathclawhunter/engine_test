@@ -22,14 +22,18 @@ public class Transform {
 		parentMatrix = new Matrix4f().initIdentity();
 	}
 	
-	public boolean hasChanged() {
-		
-		if (oldPos == null) {
-			oldPos = new Vector3f(0, 0, 0).set(pos);;
-			oldRot = new Quaternion(0, 0, 0, 0).set(rot);
-			oldScale = new Vector3f(0, 0, 0).set(scale);
-			return true;
+	public void update() {
+		if (oldPos != null) {
+			oldPos.set(pos);
+			oldRot.set(rot);
+			oldScale.set(scale);
+		} else {
+			oldPos = new Vector3f(0, 0, 0).set(pos).add(1.0f);
+			oldRot = new Quaternion(0, 0, 0, 0).set(rot).mul(0.5f);
+			oldScale = new Vector3f(0, 0, 0).set(scale).add(1.0f);
 		}
+	}
+	public boolean hasChanged() {
 		
 		if (parent != null && parent.hasChanged()) {
 			return true;
@@ -50,18 +54,16 @@ public class Transform {
 		return false;
 	}
 	
+	public void rotate(Vector3f axis, float angle) {
+		rot = new Quaternion(axis, angle).mul(rot).normalized();
+	}
+	
 	public Matrix4f getTransformation() {
 		Matrix4f translation_ = new Matrix4f().initTranslation(
 					pos.getX(), pos.getY(), pos.getZ());
 		Matrix4f rotation_ = rot.toRotationMatrix();
 		Matrix4f scale_ = new Matrix4f().initScale(scale.getX(),
 				scale.getY(), scale.getZ());
-		
-		if (oldPos != null) {
-			oldPos.set(pos);
-			oldRot.set(rot);
-			oldScale.set(scale);
-		}
 		
 		return getParentMatrix().mul(translation_.mul(rotation_.mul(scale_)));
 	}
@@ -76,6 +78,16 @@ public class Transform {
 	
 	public Vector3f getTransformedPos() {
 		return getParentMatrix().transform(pos);
+	}
+	
+	public Quaternion getTransformedRot() {
+		Quaternion parentRotation = new Quaternion(0, 0, 0, 1);
+		
+		if (parent != null) {
+			parentRotation = parent.getTransformedRot();
+		}
+		
+		return parentRotation.mul(rot);
 	}
 	
 	public void setParent(Transform parent) {

@@ -1,59 +1,41 @@
 package com.base.engine.rendering;
 
+import java.util.HashMap;
+
 import com.base.engine.core.Vector3f;
 
 public class Material {
-	private Texture texture;
-	private Vector3f color;
-	private float specularIntensity; // how intensive
-	private float specularPower; // how white
+	private HashMap<String, Texture> textureHashMap;
+	private HashMap<String, Vector3f> vectorHashMap;
+	private HashMap<String, Float> floatHashMap;
 	
-	public Material(Texture texture) {
-		this(texture, new Vector3f(1, 1, 1));
-	}
-	
-	public Material(Texture texture, Vector3f color) {
-
-		this(texture, color, 2, 32);
+	public Material() {
+		textureHashMap = new HashMap<String, Texture>();
+		vectorHashMap = new HashMap<String, Vector3f>();
+		floatHashMap = new HashMap<String, Float>();
 	}
 	
-	public Material(Texture texture, Vector3f color,
-			float specularIntensity, float specularExponent) {
-		this.texture = texture;
-		this.color = color;
-		this.specularPower = specularExponent;
-		this.specularIntensity = specularIntensity;
+	public void addTexture(String name, Texture texture) {
+		textureHashMap.put(name, texture);
 	}
-
-	public Texture getTexture() {
-		return texture;
+	
+	public void addVector3f(String name, Vector3f vector3f) {
+		vectorHashMap.put(name, vector3f);
 	}
-
-	public void setTexture(Texture texture) {
-		this.texture = texture;
+	
+	public void addFloat(String name, Float floatValue) {
+		floatHashMap.put(name, floatValue);
 	}
-
-	public Vector3f getColor() {
-		return color;
+	
+	public Texture getTexture(String name) {
+		return textureHashMap.get(name);
 	}
-
-	public void setColor(Vector3f color) {
-		this.color = color;
+	
+	public Vector3f getVector3f(String name) {
+		return vectorHashMap.get(name);
 	}
-
-	public float getSpecularIntensity() {
-		return specularIntensity;
-	}
-
-	public void setSpecularIntensity(float specularIntensity) {
-		this.specularIntensity = specularIntensity;
-	}
-
-	public float getSpecularPower() {
-		return specularPower;
-	}
-
-	public void setSpecularPower(float specularExponent) {
-		this.specularPower = specularExponent;
+	
+	public float getFloat(String name) {
+		return floatHashMap.get(name);
 	}
 }
