@@ -3,21 +3,30 @@ package com.base.engine.rendering;
 import static org.lwjgl.opengl.GL11.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.base.engine.components.*;
 import com.base.engine.core.GameObject;
 import com.base.engine.core.Vector3f;
+import com.base.engine.rendering.resourceManagement.MappedValues;
 
-public class RenderingEngine {
+public class RenderingEngine extends MappedValues {
 	
 	private Camera mainCamera;
-	private Vector3f ambientLight;
 	
 	private ArrayList<BaseLight> lights;
 	private BaseLight activeLight;
+	
+	private HashMap<String, Integer> samplerMap;
 
 	public RenderingEngine() {
+		super();
+		
 		lights = new ArrayList<BaseLight>();
+		samplerMap = new HashMap<String, Integer>();
+		samplerMap.put("diffuse", 0);
+		
+		addVector3f("ambient", new Vector3f(.1f, .1f, .1f));
 		
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 		
@@ -35,16 +44,10 @@ public class RenderingEngine {
 		/* mainCamera = new Camera((float) Math.toRadians(70.0f),
 				(float) Window.getWidth() / (float) Window.getHeight(),
 				0.01f, 1000.0f); */
-		
-		ambientLight = new Vector3f(0.1f, 0.1f, 0.1f);
-	}
-	
-	public Vector3f getAmbientLight() {
-		return ambientLight;
 	}
 
 	public void render(GameObject object) {
-		clearScreen();
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		
 		lights.clear();
 		object.addToRenderingEngine(this);
@@ -76,11 +79,6 @@ public class RenderingEngine {
 		return activeLight;
 	}
 	
-	public static void clearScreen() {
-		// TODO: Stencil Buffer
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	}
-	
 	public static void setTextures(boolean enabled) {
 		if (enabled) {
 			glEnable(GL_TEXTURE_2D);
@@ -91,14 +89,6 @@ public class RenderingEngine {
 	
 	public static String getOpenGLVersion() {
 		return glGetString(GL_VERSION);
-	}
-	
-	private static void setClearColor(Vector3f color) {
-		glClearColor(color.getX(), color.getY(), color.getZ(), 1.0f);
-	}
-
-	private static void unbindTextures() {
-		glBindTexture(GL_TEXTURE_2D, 0);
 	}
 
 	public Camera getMainCamera() {
@@ -111,5 +101,9 @@ public class RenderingEngine {
 
 	public void addCamera(Camera camera) {
 		mainCamera = camera;
+	}
+
+	public int getSamplerSlot(String samplerName) {
+		return samplerMap.get(samplerName);
 	}
 }
