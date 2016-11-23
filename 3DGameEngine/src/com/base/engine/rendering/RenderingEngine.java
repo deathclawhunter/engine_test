@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import com.base.engine.components.*;
 import com.base.engine.core.GameObject;
+import com.base.engine.core.Transform;
 import com.base.engine.core.Vector3f;
 import com.base.engine.rendering.resourceManagement.MappedValues;
 
@@ -18,6 +19,8 @@ public class RenderingEngine extends MappedValues {
 	private BaseLight activeLight;
 	
 	private HashMap<String, Integer> samplerMap;
+	
+	private Shader forwardAmbient;
 
 	public RenderingEngine() {
 		super();
@@ -44,6 +47,8 @@ public class RenderingEngine extends MappedValues {
 		/* mainCamera = new Camera((float) Math.toRadians(70.0f),
 				(float) Window.getWidth() / (float) Window.getHeight(),
 				0.01f, 1000.0f); */
+		
+		forwardAmbient = new Shader("forward-ambient");
 	}
 
 	public void render(GameObject object) {
@@ -51,8 +56,6 @@ public class RenderingEngine extends MappedValues {
 		
 		lights.clear();
 		object.addToRenderingEngine(this);
-		
-		Shader forwardAmbient = ForwardAmbient.getInstance();
 		
 		object.render(forwardAmbient, this);
 		
@@ -105,5 +108,11 @@ public class RenderingEngine extends MappedValues {
 
 	public int getSamplerSlot(String samplerName) {
 		return samplerMap.get(samplerName);
+	}
+	
+	public void updateUniformStruct(Transform transform, Material material,
+			Shader shader, String uniformName, String uniformType) {
+		throw new IllegalArgumentException(uniformName + "," +
+				uniformType + " for rendering engine ");
 	}
 }
