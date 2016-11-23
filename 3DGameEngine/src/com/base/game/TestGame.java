@@ -2,6 +2,8 @@ package com.base.game;
 
 import com.base.engine.components.Camera;
 import com.base.engine.components.DirectionalLight;
+import com.base.engine.components.FreeLook;
+import com.base.engine.components.FreeMove;
 import com.base.engine.components.MeshRenderer;
 import com.base.engine.components.PointLight;
 import com.base.engine.components.SpotLight;
@@ -10,6 +12,7 @@ import com.base.engine.core.GameObject;
 import com.base.engine.core.Quaternion;
 import com.base.engine.core.Vector2f;
 import com.base.engine.core.Vector3f;
+import com.base.engine.rendering.Attenuation;
 import com.base.engine.rendering.Material;
 import com.base.engine.rendering.Mesh;
 import com.base.engine.rendering.Texture;
@@ -72,10 +75,10 @@ public class TestGame extends Game {
 		
 		GameObject pointLightObject = new GameObject();
 		pointLightObject.addComponent(new PointLight(new Vector3f(0f, 1f, 0f), 0.4f,
-				new Vector3f(0, 0, 1)));
+				new Attenuation(0, 0, 1)));
 		
 		SpotLight spotLight = new SpotLight(new Vector3f(0f, 1f, 1f), 0.8f,
-				new Vector3f(0, 0, .05f), 0.7f);
+				new Attenuation(0, 0, .05f), 0.7f);
 		GameObject spotLightObject = new GameObject();
 		spotLightObject.addComponent(spotLight);
 		
@@ -90,7 +93,11 @@ public class TestGame extends Game {
 		
 		GameObject testMesh1 = new GameObject().addComponent(new MeshRenderer(mesh2, material)); 
 		GameObject testMesh2 = new GameObject().addComponent(new MeshRenderer(mesh2, material));
-		GameObject testMesh3 = new GameObject().addComponent(new MeshRenderer(tempMesh, material));
+		// GameObject testMesh3 = new GameObject().addComponent(new FreeLook()).addComponent(new LookAtComponent()).addComponent(new MeshRenderer(tempMesh, material));
+		/* GameObject testMesh3 = new GameObject().addComponent(new FreeLook())
+				.addComponent(new FreeMove())
+				.addComponent(new MeshRenderer(tempMesh, material)); */
+		GameObject testMesh3 = new GameObject().addComponent(new LookAtComponent()).addComponent(new MeshRenderer(tempMesh, material));
 		
 		testMesh1.getTransform().getPos().set(0,  2,  0);
 		testMesh1.getTransform().setRot(new Quaternion(new Vector3f(0, 1, 0), 0.4f));
@@ -98,7 +105,10 @@ public class TestGame extends Game {
 		
 		testMesh1.addChild(testMesh2);
 		
-		testMesh2.addChild(new GameObject().addComponent(new Camera((float) Math.toRadians(70.0f),
+		testMesh2.addChild(new GameObject()
+				.addComponent(new FreeLook(50f))
+				.addComponent(new FreeMove(10f))
+				.addComponent(new Camera((float) Math.toRadians(70.0f),
 				(float) Window.getWidth() / (float) Window.getHeight(),
 				0.01f, 1000.0f)));
 		

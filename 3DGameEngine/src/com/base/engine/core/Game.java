@@ -9,11 +9,11 @@ public abstract class Game {
 	public void init() {
 	}
 	public void input(float delta) {
-		getRootObject().input(delta);
+		getRootObject().inputAll(delta);
 	}
 	
 	public void update(float delta) {
-		getRootObject().update(delta);
+		getRootObject().updateAll(delta);
 	}
 	
 	public void render(RenderingEngine renderingEngine) {
@@ -29,5 +29,8 @@ public abstract class Game {
 	
 	public void addObject(GameObject object) {
 		getRootObject().addChild(object);
+	}
+	public void setEngine(CoreEngine engine) {
+		getRootObject().setEngine(engine);
 	}
 }

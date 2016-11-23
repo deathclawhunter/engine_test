@@ -39,6 +39,10 @@ public class Transform {
 			return true;
 		}
 		
+		if (oldPos == null) {
+			return true;
+		}
+		
 		if (!pos.equals(oldPos)) {
 			return true;
 		}
@@ -124,5 +128,13 @@ public class Transform {
 	
 	public void setScale(float x, float y, float z) {
 		this.scale = new Vector3f(x, y, z);
+	}
+	
+	public void lookAt(Vector3f point, Vector3f up) {
+		rot = getLookAtRotation(point, up);
+	}
+
+	public Quaternion getLookAtRotation(Vector3f point, Vector3f up) {
+		return new Quaternion(new Matrix4f().initRotation(point.sub(pos).normalized(), up));
 	}
 }
